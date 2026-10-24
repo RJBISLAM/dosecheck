@@ -1,0 +1,2 @@
+# English OCR model
+`eng.traineddata` is the English LSTM model supplied by the local Homebrew Tesseract installation (5.5.2). The tessdata project distributes its models under Apache License 2.0; see LICENSE. Model reference: https://github.com/tesseract-ocr/tessdata_fast . This model is included to allow offline English printed-label extraction without a first-use network download. It is not a medical model and does not establish product identity.

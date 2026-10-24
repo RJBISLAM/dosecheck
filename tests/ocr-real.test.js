@@ -1,0 +1,2 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';import {extractText} from '../server/ocr.js';
+test('bundled OCR engine reads a synthetic printed label offline',{timeout:60000},async()=>{const r=await extractText(readFileSync(new URL('./fixtures/printed-label.png',import.meta.url)));assert.match(r.text,/Ace Plus/i);assert.match(r.text,/500 mg\s*\+\s*65 mg/i);});

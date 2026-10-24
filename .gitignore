@@ -1,0 +1,12 @@
+node_modules/
+data/*
+!data/.gitkeep
+dist/
+public/tesseract/
+.env
+*.zip
+DoseCheck.html
+
+artifacts/
+
+.openai/

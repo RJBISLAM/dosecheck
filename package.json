@@ -1,0 +1,33 @@
+{
+  "name": "dosecheck",
+  "version": "0.4.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "dev": "node scripts/copy-ocr-assets.mjs && node --experimental-sqlite server/index.js --dev",
+    "prebuild": "node scripts/copy-ocr-assets.mjs",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "node --experimental-sqlite server/index.js",
+    "test": "node --experimental-sqlite --test tests/*.test.js",
+    "test:e2e": "node tests/e2e/browser.e2e.cjs chromium",
+    "setup:browsers": "playwright install chromium webkit",
+    "test:e2e:webkit": "node tests/e2e/browser.e2e.cjs webkit",
+    "test:e2e:all": "npm run test:e2e && npm run test:e2e:webkit",
+    "verify:release": "npm test && npm run build && npm run test:e2e:all",
+    "demo": "node scripts/record-demo.cjs"
+  },
+  "dependencies": {
+    "express": "4.21.2",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "tesseract.js": "6.0.1"
+  },
+  "devDependencies": {
+    "vite": "6.3.5",
+    "playwright": "1.62.1"
+  }
+}
