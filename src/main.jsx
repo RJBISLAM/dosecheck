@@ -1,6 +1,7 @@
 import React,{useEffect,useRef,useState} from 'react';
 import {createRoot} from 'react-dom/client';
 import './style.css';
+import './refinement.css';
 import {localize,bnIngredient} from './i18n.js';
 import {products as catalogue,compare as runCompare,matchesQuery,findCandidates,familyOf} from '../shared/products.js';
 
